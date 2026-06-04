@@ -1,5 +1,5 @@
 import React, { useEffect, useState, createContext, useContext } from 'react';
-import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import Lenis from '@studio-freight/lenis';
 import { 
   Github, 
@@ -8,20 +8,11 @@ import {
   Moon, 
   Sun, 
   ArrowUpRight, 
-  Terminal, 
   Shield, 
   Code2, 
-  Database,
-  ExternalLink
+  Database
 } from 'lucide-react';
 import { PROJECTS, SKILLS, EXPERIENCE, EDUCATION } from './constants';
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
-
-function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
-
 const ThemeContext = createContext({ isDark: true, toggle: () => {} });
 
 export default function App() {
@@ -62,11 +53,11 @@ export default function App() {
           <ProjectsGrid />
           <SkillsSection />
           <EducationSection />
-          <Contact />
+          <Certifications />
         </main>
 
         <footer className="py-12 border-t border-neutral-200 dark:border-neutral-800 text-center text-sm opacity-50">
-          © {new Date().getFullYear()} Ansik Aryan Samal. Built with React & TypeScript.
+          © {new Date().getFullYear()} Ansik Aryan Samal. All Rights Reserved.
         </footer>
       </div>
     </ThemeContext.Provider>
@@ -77,11 +68,11 @@ function Navbar() {
   const { isDark, toggle } = useContext(ThemeContext);
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] md:w-max px-6 py-3 bg-white/70 dark:bg-black/70 backdrop-blur-xl border border-neutral-200 dark:border-neutral-800 rounded-full z-10 flex items-center gap-8 justify-between">
-      <div className="text-sm font-bold tracking-tighter">AAS</div>
       <div className="hidden md:flex gap-6 text-xs font-medium uppercase tracking-widest">
-        <a href="#experience" className="hover:text-accent transition-colors">Ex</a>
+        <a href="#experience" className="hover:text-accent transition-colors">Experience</a>
         <a href="#projects" className="hover:text-accent transition-colors">Projects</a>
         <a href="#skills" className="hover:text-accent transition-colors">Skills</a>
+        <a href="#certifications" className="hover:text-accent transition-colors">Certifications</a>
       </div>
       <div className="flex items-center gap-4">
         <button onClick={toggle} className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors">
@@ -105,12 +96,12 @@ function Hero() {
           Ansik Aryan <span className="opacity-30 flex-nowrap">Samal</span>
         </h1>
         <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 max-w-2xl leading-relaxed">
-          Computer Science undergraduate specializing in <span className="text-black dark:text-white">Full-Stack Development</span> & <span className="text-black dark:text-white">Secure Systems Design</span>. Building scalable applications with a focus on machine learning and cybersecurity.
+          Computer Science graduate specializing in <span className="text-black dark:text-white">MERN-stack Development</span>, <span className="text-black dark:text-white">API Design</span> & <span className="text-black dark:text-white">RESTful API Development</span>.
         </p>
 
         <div className="flex gap-6 mt-10">
-          <SocialLink href="https://github.com/Ansik19" icon={<Github size={20} />} label="GitHub" />
-          <SocialLink href="https://linkedin.com" icon={<Linkedin size={20} />} label="LinkedIn" />
+          <SocialLink href="https://github.com/Kiyotaka-Ayanak0ji" icon={<Github size={20} />} label="GitHub" />
+          <SocialLink href="https://www.linkedin.com/in/ansik-aryan-samal-1aa731250" icon={<Linkedin size={20} />} label="LinkedIn" />
           <SocialLink href="mailto:aryanansik@gmail.com" icon={<Mail size={20} />} label="Email" />
         </div>
       </motion.div>
@@ -137,8 +128,8 @@ function ExperienceSection() {
             </div>
             <ul className="space-y-4">
               {exp.details.map((detail, idx) => (
-                <li key={idx} className="text-neutral-600 dark:text-neutral-400 flex gap-4">
-                  <span className="text-accent mt-1.5">•</span>
+                <li key={idx} className="text-neutral-600 dark:text-neutral-400 gap-4 ">
+                  <span className="text-accent mt-1.5 px-2">•</span>
                   {detail}
                 </li>
               ))}
@@ -153,11 +144,14 @@ function ExperienceSection() {
 function ProjectsGrid() {
   return (
     <section id="projects" className="mb-32">
-      <SectionLabel>Selected Projects</SectionLabel>
+      <SectionLabel>Projects</SectionLabel>
       <div className="grid md:grid-cols-2 gap-8">
         {PROJECTS.map((project, i) => (
-          <motion.div
+          <motion.a
             key={i}
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -191,7 +185,7 @@ function ProjectsGrid() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </motion.a>
         ))}
       </div>
     </section>
@@ -241,26 +235,36 @@ function EducationSection() {
             </div>
           </div>
         ))}
-        <div className="mt-8 p-6 bg-accent/5 border border-accent/20 rounded-2xl">
-          <p className="font-bold text-accent">Certification: SEBI and NISM Investor Certification</p>
-        </div>
       </div>
     </section>
   );
 }
 
-function Contact() {
+function Certifications() {
   return (
-    <section className="mb-32">
-      <div className="bg-neutral-900 text-white dark:bg-neutral-100 dark:text-black p-12 md:p-24 rounded-[3rem] text-center">
-        <h2 className="text-4xl md:text-6xl font-bold mb-8">Let's create something secure.</h2>
-        <a href="mailto:aryanansik@gmail.com" className="inline-flex items-center gap-4 text-xl md:text-2xl hover:gap-6 transition-all border-b pb-2">
-          aryanansik@gmail.com <ExternalLink />
-        </a>
+    <section id="certifications" className="mb-32">
+      <SectionLabel>Certifications</SectionLabel>
+      <div className="space-y-8">
+        <p className="text-neutral-500">SEBI and NISM Investor Certification</p>      
+        <p className="text-neutral-500">Web Development with HTML,CSS and JavaScript from <strong>Pupilfirst Pvt Ltd.</strong></p>
+        <p className="text-neutral-500">Server Side Development Using Node.JS from <strong>Pupilfirst Pvt Ltd.</strong></p>
       </div>
     </section>
-  );
+  )
 }
+
+// function Contact() {
+//   return (
+//     <section className="mb-32">
+//       <div className="bg-neutral-900 text-white dark:bg-neutral-100 dark:text-black p-12 md:p-24 rounded-[3rem] text-center">
+//         <h2 className="text-4xl md:text-6xl font-bold mb-8">Let's create something secure.</h2>
+//         <a href="mailto:aryanansik@gmail.com" className="inline-flex items-center gap-4 text-xl md:text-2xl hover:gap-6 transition-all border-b pb-2">
+//           aryanansik@gmail.com <ExternalLink />
+//         </a>
+//       </div>
+//     </section>
+//   );
+// }
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (

@@ -7,7 +7,8 @@ export const PROJECTS = [
       "Implemented pixel altering-based encryption.",
       "Designed responsive frontend with dark mode support.",
       "Client-side routing with react-router-dom."
-    ]
+    ],
+    link: "https://steganography-project-updated-mwskcqpo9.vercel.app/"
   },
   {
     title: "Stock Price Prediction Model",
@@ -16,18 +17,21 @@ export const PROJECTS = [
     highlights: [
       "Integrated real-time financial data from yfinance API.",
       "Processed 5,000+ historical data points per stock.",
-      "Improved data preprocessing for reliable outputs."
-    ]
+      "Improved data preprocessing for reliable outputs.",
+      "Used the Sequential model to build the model and train it on real stock data."
+    ],
+    link: "https://github.com/Kiyotaka-Ayanak0ji/Stock_Price_Prediction"
   },
   {
     title: "Full-Stack Todo Application",
     description: "Designed and deployed a full-stack todo application using Node.js and Express.",
     tags: ["Node.js", "Express", "PostgreSQL", "Passport.js", "bcrypt"],
     highlights: [
-      "User authentication with Passport.js.",
       "Password encryption using bcrypt.",
-      "Full CRUD functionality with responsive UI."
-    ]
+      "Multi-user support and user preferences using the Context API",
+      "CRUD functionality with responsive UI."
+    ],
+    link: "https://todo-application-am13.onrender.com/"
   }
 ];
 
@@ -54,8 +58,8 @@ export const EDUCATION = [
   { 
     school: "Institute of Aeronautical Engineering", 
     degree: "B.Tech in Computer Science and Engineering", 
-    period: "2021 – 2025", 
-    result: "CGPA: 7.33" 
+    period: "2021 - 2025", 
+    result: "CGPA: 7.83" 
   },
   { 
     school: "Trividyaa Junior College", 
