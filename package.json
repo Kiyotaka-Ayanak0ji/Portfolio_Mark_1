@@ -1,9 +1,5 @@
 {
   "name": "ansik-portfolio",
-<<<<<<< HEAD
-  "private": true,
-=======
->>>>>>> 459f032 (Modified the links as well as rebuilt the certification section.)
   "version": "1.0.0",
   "type": "module",
   "scripts": {
@@ -12,15 +8,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "framer-motion": "^10.16.4",
-    "lucide-react": "^0.284.0",
-    "clsx": "^2.0.0",
-    "tailwind-merge": "^1.14.0",
-    "@studio-freight/lenis": "^1.0.27"
-=======
     "@studio-freight/lenis": "^1.0.27",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",
@@ -28,7 +15,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^1.14.0"
->>>>>>> 459f032 (Modified the links as well as rebuilt the certification section.)
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -38,12 +24,6 @@
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.0.2",
-<<<<<<< HEAD
-    "vite": "^4.4.5"
-  }
-}
-=======
     "vite": "^8.0.16"
   }
 }
->>>>>>> 459f032 (Modified the links as well as rebuilt the certification section.)
