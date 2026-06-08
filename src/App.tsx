@@ -96,7 +96,7 @@ function Hero() {
           Ansik Aryan <span className="opacity-30 flex-nowrap">Samal</span>
         </h1>
         <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 max-w-2xl leading-relaxed">
-          Computer Science graduate specializing in <span className="text-black dark:text-white">MERN-stack Development</span>, <span className="text-black dark:text-white">API Design</span> & <span className="text-black dark:text-white">RESTful API Development</span>.
+          Computer Science graduate specializing in <span className="text-black dark:text-white">API Development</span>, <span className="text-black dark:text-white">Data Science</span> & <span className="text-black dark:text-white">Artificial Intelligence</span>.
         </p>
 
         <div className="flex gap-6 mt-10">
@@ -162,7 +162,7 @@ function ProjectsGrid() {
               <div className="flex justify-between items-start mb-6">
                 <div className="p-3 bg-white dark:bg-black rounded-xl border border-neutral-200 dark:border-neutral-800">
                   {project.title.includes("Stenography") ? <Shield className="text-accent" size={24} /> : 
-                   project.title.includes("Stock") ? <Code2 className="text-accent" size={24} /> : 
+                   project.title.includes("Stock") || project.title.includes("Github") ? <Code2 className="text-accent" size={24} /> : 
                    <Database className="text-accent" size={24} />}
                 </div>
                 <ArrowUpRight className="opacity-20" />

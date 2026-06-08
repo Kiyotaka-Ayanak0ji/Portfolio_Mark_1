@@ -32,14 +32,25 @@ export const PROJECTS = [
       "CRUD functionality with responsive UI."
     ],
     link: "https://todo-application-am13.onrender.com/"
+  },
+  {
+    title: "Github Profile Analyzer API",
+    description: "A backend service that analyzes a GitHub user profile using the GitHub public API and stores useful insights in a MySQL database.",
+    tags: ["Node.JS","Express.JS","Flask","Python","Pandas","React","TainwindCSS","MySQL"],
+    highlights: [
+      "Fetches public profile data from GitHub using username",
+      "Stores useful insights (Public repository count, Followers count, etc)",
+      "Stores analysis results in MySQL database"
+    ],
+    link: ""
   }
 ];
 
 export const SKILLS = {
   languages: ["C++", "Java", "Python", "JavaScript", "C", "SQL"],
-  web: ["Node.js", "Express.js", "React", "Flask", "Tailwind CSS"],
-  databases: ["PostgreSQL", "MongoDB"],
-  concepts: ["Data Structures", "Algorithms", "OOP", "Authentication", "Encryption", "REST APIs", "Computer Networks", "System Design", "SOLID Principles", "CI/CD"]
+  tools: ["PowerBI","Jupyter Notebook","Git","MySQL Workbench"],
+  "libraries and frameworks": ["Pandas","Numpy","Matplotlib","Seaborn","Tensorflow","Node.js", "Express.js" , "React", "Flask", "Tailwind CSS"],
+  databases: ["PostgreSQL", "MongoDB", "MySQL"],
 };
 
 export const EXPERIENCE = [
