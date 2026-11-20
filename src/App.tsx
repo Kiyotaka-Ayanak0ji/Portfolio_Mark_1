@@ -26,14 +26,22 @@ export default function App() {
 
   useEffect(() => {
     const lenis = new Lenis();
+    let frameId: number;
+
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      frameId = window.requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
-    
+
+    frameId = window.requestAnimationFrame(raf);
+
     if (isDark) document.documentElement.classList.add('dark');
     else document.documentElement.classList.remove('dark');
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      lenis.destroy();
+    };
   }, [isDark]);
 
   return (
@@ -294,3 +302,5 @@ function SocialLink({ href, icon, label }: { href: string; icon: React.ReactNode
     </a>
   )
 }
+
+
