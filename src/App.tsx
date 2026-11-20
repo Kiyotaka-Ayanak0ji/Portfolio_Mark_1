@@ -95,8 +95,13 @@ function Hero() {
         <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-8 leading-[0.9]">
           Ansik Aryan <span className="opacity-30 flex-nowrap">Samal</span>
         </h1>
+        {/* 
+          Software Development Engineer specializing in Backend Systems, 
+          API Development, and Full-Stack Engineering, with hands-on
+          experience in AI/ML and Data-Driven Applications.
+        */}
         <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 max-w-2xl leading-relaxed">
-          Computer Science graduate specializing in <span className="text-black dark:text-white">API Development</span>, <span className="text-black dark:text-white">Data Science</span> & <span className="text-black dark:text-white">Artificial Intelligence</span>.
+          Computer Science graduate specializing in <span className="text-black dark:text-white">Backend Systems</span>, <span className='text-black dark:text-white'>API Development</span> , <span className="text-black dark:text-white">Full-Stack Engineering</span> with hands-on experience in AI/ML and Data-Driven Applications.
         </p>
 
         <div className="flex gap-6 mt-10">
@@ -245,6 +250,7 @@ function Certifications() {
     <section id="certifications" className="mb-32">
       <SectionLabel>Certifications</SectionLabel>
       <div className="space-y-8">
+        <p className='text-neutral-500'>Data Science and Artificial Intelligence from <strong>IIT Roorkee and Masai School</strong>(Ongoing, 2026)</p>
         <p className="text-neutral-500">SEBI and NISM Investor Certification</p>      
         <p className="text-neutral-500">Web Development with HTML,CSS and JavaScript from <strong>Pupilfirst Pvt Ltd.</strong></p>
         <p className="text-neutral-500">Server Side Development Using Node.JS from <strong>Pupilfirst Pvt Ltd.</strong></p>
